@@ -1,0 +1,34 @@
+Task: Write a function named updateStudentProfile(profile, updates)
+. The function should return a new profile object with the updates applied while following these rules:
+If the grade
+ property is updated, it must be between 0
+ and 100.
+If the name
+ property is updated, remove any leading or trailing whitespace before saving it.
+Ignore any properties that do not already exist on the original profile object.
+Do not modify the original profile
+ object.
+ 
+const profile = {
+  id: 1,
+  name: "Alice",
+  grade: 85
+};
+
+const updates = {
+  name: "  Alice Johnson  ",
+  grade: 90,
+  age: 20
+};
+
+updateStudentProfile(profile, updates);
+
+/*
+Expected outcome
+{
+  id: 1,
+  name: "Alice Johnson",
+  grade: 90
+}
+*/
+​

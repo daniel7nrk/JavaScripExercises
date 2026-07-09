@@ -1,0 +1,30 @@
+### 3.Unique Products Report
+
+You are given an array of orders:
+
+```java
+const orders= [
+  { customer:"Ali", product:"Laptop" },
+  { customer:"Sara", product:"Mouse" },
+  { customer:"Ali", product:"Laptop" },
+  { customer:"John", product:"Keyboard" },
+  { customer:"Sara", product:"Mouse" },
+  { customer:"Ali", product:"Monitor" }
+];
+```
+
+Task:
+
+- Use for of loop, Set, and destructuring
+
+Write a function `createReport(orders)` that returns:
+
+```java
+{
+uniqueProducts: ["Laptop","Mouse","Keyboard","Monitor"],
+firstProduct:"Laptop",
+totalUnique:4
+}
+```
+
+###

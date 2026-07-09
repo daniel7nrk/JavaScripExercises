@@ -1,0 +1,18 @@
+You are given:
+
+```jsx
+const arr1= [1,2,3];
+const arr2= [4,5,6];
+```
+
+### Task:
+
+1. Merge both arrays into a new array called `merged`.
+2. Add `0` at the beginning of the array.
+3. Add `7` at the end of the array.
+
+### Expected output:
+
+```
+[0, 1, 2, 3, 4, 5, 6, 7]
+```
