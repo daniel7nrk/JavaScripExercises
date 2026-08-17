@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Demo (API key example)</title>
+    <style>
+        body { font-family: sans-serif; max-width: 400px; margin: 40px auto; }
+        pre { background: #f0f0f0; padding: 12px; border-radius: 6px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h2>Weather Lookup (uses an API key)</h2>
+    <input type="text" id="cityName" placeholder="Enter city name (e.g. Kigali)">
+    <button onclick="fetchWeather()">Get Weather</button>
+
+    <pre id="output"></pre>
+
+    <script src="index.js"></script>
+</body>
+</html>

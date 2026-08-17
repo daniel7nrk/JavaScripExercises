@@ -30,13 +30,14 @@ function sumOfDivided(arrs) {
         return [...new Set(factors)];
     }
     
-    const primeFactors = arrs.map( arr =>{
-        return primeFactorsMaker(arr)
-    })
+    const primeFactors = arrs.map(arr => {
+        return primeFactorsMaker(arr);
+    });
 
-    let primeFactor = []
-    for(let arr of primeFactors ){
-        primeFactor.push(...arr)
+    let primeFactor = [];
+
+    for (let arr of primeFactors) {
+        primeFactor.push(...arr);
     }
 
     primeFactor = primeFactor.filter(number => {
@@ -51,13 +52,25 @@ function sumOfDivided(arrs) {
         return true;
     });
 
-    return [...new Set(primeFactor)].sort((a, b) => a - b);
+    
+    primeFactor = [...new Set(primeFactor)].sort((a, b) => a - b);
 
+    let result = [];
 
+    for (let prime of primeFactor) {
+        let sum = 0;
+
+        for (let number of arrs) {
+            if (number % prime === 0) {
+                sum += number;
+            }
+        }
+
+        result.push([prime, sum]);
+    }
+
+    return result;
 }
- 
-
-
 
 
 
