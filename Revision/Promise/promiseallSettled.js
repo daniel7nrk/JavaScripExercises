@@ -4,5 +4,6 @@ const p1 = new Promise((resolve, reject) => resolve("Promise 1 resolved"));
 const p2 = new Promise((resolve, reject) => reject("Promise 2 rejected"));
 const p3 = new Promise((resolve, reject) => resolve("Promise 3 resolved"));
 
-const p4 = Promise.allSettled([p1, p2, p3]).then(value => console.log(value)).catch(err => console.error(err));
-console.log(p4);
+const p4 = Promise.allSettled([p1, p2, p3])
+    .then(value => console.log(value[1]))
+    .catch(err => console.error(err));

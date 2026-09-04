@@ -1,0 +1,15 @@
+Write a function `debounce(fn, delay)` that wraps another function so it only actually runs after `delay` ms have passed since the *last* time the debounced function was called. If it's called again before the delay is up, the timer resets. Useful for things like a search input where you don't want to fire an API call on every keystroke.
+
+```jsx
+function debounce(fn, delay) {
+  // returns a new function
+}
+
+const log = debounce((msg) => console.log(msg), 300);
+
+log("h");
+log("he");
+log("hel");
+log("hello");
+// only "hello" gets logged, once, ~300ms after the last call
+```

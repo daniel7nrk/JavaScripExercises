@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="text" class="text">
+    <p>the result is <span id="res"></span></p>
+</body>
+<script>
+const input = document.getElementById("text")
+const res = document.getElementById("res")
+const API_KEY = "5d7cf6594bfd574078da8d5081c3df26"
+let task
+
+input.addEventListener('keyup', () => {
+    const city = input.value
+    clearTimeout(task)
+
+    if (!city) {
+        res.textContent = ""
+        return
+    }
+
+    task = setTimeout(() => {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        fetch(url)
+            .then(data => data.json())
+            .then(data => {
+                res.textContent = data.main ? `${data.main.temp}°C` : "City not found"
+            })
+            .catch(() => {
+                res.textContent = "Error fetching weather"
+            })
+    }, 4000)
+})
+    
+</script>
+</html>
